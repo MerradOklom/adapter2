@@ -41,7 +41,6 @@ you:
   custom: true
   task: false
   model:
-    - 'Smart'
     - 'you/gpt_4'
     - 'you/gpt_4o'
     - 'you/gpt_4o_mini'
