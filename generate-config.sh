@@ -30,6 +30,7 @@ fi
 cat <<EOF > /app/config.yaml
 server:
   port: 8080
+  debug: true
 blackbox:
   token: '${BLACKBOX_TOKEN}'
   model:
@@ -64,7 +65,7 @@ you:
   cookies:
     - '${YOU_COOKIE}'
 bing:
-  proxied: true
+  proxied: false
   cookies:
     - scopeId: '${BING_SCOPE_ID}'
       idToken: '${BING_ID_TOKEN}'
