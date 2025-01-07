@@ -33,9 +33,28 @@ server:
   debug: true
 blackbox:
   token: '${BLACKBOX_TOKEN}'
+  model:
+    - 'blackbox/GPT-4o'
+    - 'blackbox/Gemini-PRO'
+    - 'blackbox/Claude-Sonnet-3.5'
 you:
   custom: true
   task: false
+  model:
+    - 'you/gpt_4'
+    - 'you/gpt_4o'
+    - 'you/gpt_4o_mini'
+    - 'you/gpt_4_turbo'
+    - 'you/openai_o1'
+    - 'you/openai_o1_mini'
+    - 'you/claude_2'
+    - 'you/claude_3_haiku'
+    - 'you/claude_3_sonnet'
+    - 'you/claude_3_5_sonnet'
+    - 'you/claude_3_opus'
+    - 'you/gemini_pro'
+    - 'you/gemini_1_5_pro'
+    - 'you/gemini_1_5_flash'
   cookies:
     - '${YOU_COOKIE}'
 bing:
