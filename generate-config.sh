@@ -26,6 +26,11 @@ if [ -z "$BING_COOKIE" ]; then
   exit 1
 fi
 
+if [ -z "$CHECKSUM" ]; then
+  echo "ERROR: CHECKSUM environment variable is not set."
+  exit 1
+fi
+
 # Generate the config.yaml file
 cat <<EOF > /app/config.yaml
 server:
@@ -63,6 +68,8 @@ bing:
     - scopeId: '${BING_SCOPE_ID}'
       idToken: '${BING_ID_TOKEN}'
       cookie: '${BING_COOKIE}'
+cursor:
+  checksum: '${CHECKSUM}'
 EOF
 
 echo "Config file generated successfully."
