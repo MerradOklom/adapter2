@@ -26,6 +26,31 @@ if [ -z "$BING_COOKIE" ]; then
   exit 1
 fi
 
+if [ -z "$GROK_COOKIE_1" ]; then
+  echo "ERROR: GROK_COOKIE_1 environment variable is not set."
+  exit 1
+fi
+
+if [ -z "$GROK_COOKIE_2" ]; then
+  echo "ERROR: GROK_COOKIE_2 environment variable is not set."
+  exit 1
+fi
+
+if [ -z "$GROK_COOKIE_3" ]; then
+  echo "ERROR: GROK_COOKIE_3 environment variable is not set."
+  exit 1
+fi
+
+if [ -z "$GROK_COOKIE_4" ]; then
+  echo "ERROR: GROK_COOKIE_4 environment variable is not set."
+  exit 1
+fi
+
+if [ -z "$GROK_COOKIE_5" ]; then
+  echo "ERROR: GROK_COOKIE_5 environment variable is not set."
+  exit 1
+fi
+
 
 # Generate the config.yaml file
 cat <<EOF > /app/config.yaml
@@ -64,6 +89,15 @@ bing:
     - scopeId: '${BING_SCOPE_ID}'
       idToken: '${BING_ID_TOKEN}'
       cookie: '${BING_COOKIE}'
+grok:
+  think_reason: false
+  disable_search: false
+  cookies:
+    - '${GROK_COOKIE_1}'
+    - '${GROK_COOKIE_2}'
+    - '${GROK_COOKIE_3}'
+    - '${GROK_COOKIE_4}'
+    - '${GROK_COOKIE_5}'
 EOF
 
 echo "Config file generated successfully."
