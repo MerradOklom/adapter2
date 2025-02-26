@@ -51,6 +51,11 @@ if [ -z "$GROK_COOKIE_5" ]; then
   exit 1
 fi
 
+if [ -z "$QODO_KEY" ]; then
+  echo "ERROR: QODO_KEY environment variable is not set."
+  exit 1
+fi
+
 
 # Generate the config.yaml file
 cat <<EOF > /app/config.yaml
@@ -99,7 +104,7 @@ grok:
     - '${GROK_COOKIE_4}'
     - '${GROK_COOKIE_5}'
 qodo:
-  key: AIzaSyCMMynYm5VRHj1NOwkfWinX-HYsFArdUbk
+  key: '${QODO_KEY}'
 EOF
 
 echo "Config file generated successfully."
